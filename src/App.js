@@ -1,8 +1,9 @@
 // main app file for CW 05
-// right now I am just wiring in the first component before adding the rest
+// now adding the counter component to test state functionality
 
 import React from "react";
 import HelloWorld from "./components/HelloWorld";
+import Counter from "./components/Counter";
 
 function App() {
   return (
@@ -10,8 +11,11 @@ function App() {
       <h1>CW-05 React App</h1>
       <p>Project setup is working.</p>
 
-      {/* first graded component */}
+      {/* first component */}
       <HelloWorld />
+
+      {/* second component - state example */}
+      <Counter />
     </div>
   );
 }
