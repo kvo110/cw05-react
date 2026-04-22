@@ -1,11 +1,12 @@
 // main app file for CW 05
-// now adding the filtered list so the app covers search and category filtering too
+// now the full app is connected and wrapped in sections so styling looks cleaner
 
 import React from "react";
 import HelloWorld from "./components/HelloWorld";
 import Counter from "./components/Counter";
 import List from "./components/List";
 import FilteredList from "./components/FilteredList";
+import "./App.css";
 
 function App() {
 
@@ -23,18 +24,32 @@ function App() {
   ];
 
   return (
-    <div>
-      <h1>CW-05 React App</h1>
-      <p>Project setup is working.</p>
+    <div className="app-shell">
+      <div className="app-container">
+        <header className="app-header">
+          <h1>CW-05 React App</h1>
+          <p>
+            This page shows class components, state, props, lists, and filtering
+            all in one React app.
+          </p>
+        </header>
 
-      <HelloWorld />
+        <section className="card">
+          <HelloWorld />
+        </section>
 
-      <Counter />
+        <section className="card">
+          <Counter />
+        </section>
 
-      <List items={fruits} />
+        <section className="card">
+          <List items={fruits} />
+        </section>
 
-      {/* filtered list with search and dropdown */}
-      <FilteredList items={itemData} />
+        <section className="card">
+          <FilteredList items={itemData} />
+        </section>
+      </div>
     </div>
   );
 }

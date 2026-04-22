@@ -1,38 +1,125 @@
-.App {
-  text-align: center;
+/* overall page - dark discord-style background */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  color: #e5e7eb;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* main wrapper */
+.app-shell {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 32px 16px;
+  box-sizing: border-box;
+}
+
+/* center content */
+.app-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* header styling */
+.app-header {
+  text-align: center;
+  background: #111827;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  margin-bottom: 24px;
+  border-top: 3px solid #8b5cf6;
+  /* purple accent */
+}
+
+.app-header h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #c4b5fd;
+  /* soft purple */
+}
+
+.app-header p {
+  margin: 0;
+  color: #9ca3af;
+}
+
+/* card sections */
+.card {
+  background: #020617;
+  border-radius: 14px;
+  padding: 22px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  border-left: 4px solid #22c55e;
+  /* green accent */
+}
+
+/* section titles */
+.card h2 {
+  margin-top: 0;
+  color: #a78bfa;
+  /* purple */
+}
+
+/* list styling */
+ul {
+  padding-left: 22px;
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* button styling */
+button {
+  background: linear-gradient(135deg, #8b5cf6, #22c55e);
   color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  opacity: 0.9;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* inputs */
+input,
+select {
+  padding: 10px 12px;
+  margin-right: 10px;
+  margin-bottom: 14px;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #111827;
+  color: #e5e7eb;
+}
+
+/* focus glow */
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.3);
+}
+
+/* mobile responsiveness */
+@media (max-width: 600px) {
+  .app-shell {
+    padding: 20px 12px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .card {
+    padding: 18px;
+  }
+
+  input,
+  select {
+    width: 100%;
+    margin-right: 0;
   }
 }
