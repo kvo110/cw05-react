@@ -1,5 +1,5 @@
-// counter component - this is where we practice state and button clicks
-// trying to keep it simple but still clear how state updates work
+// counter component - now includes both increment and reset functionality
+// added reset so user can bring count back to 0 easily
 
 import React, { Component } from "react";
 
@@ -7,16 +7,22 @@ class Counter extends Component {
   constructor(props) {
     super(props);
 
-    // starting count at 0
     this.state = {
       count: 0
     };
   }
 
-  // function to increase count
+  // increases count
   increment = () => {
     this.setState({
       count: this.state.count + 1
+    });
+  };
+
+  // resets count back to 0
+  reset = () => {
+    this.setState({
+      count: 0
     });
   };
 
@@ -25,9 +31,13 @@ class Counter extends Component {
       <div>
         <h2>Counter: {this.state.count}</h2>
 
-        {/* button updates state */}
         <button onClick={this.increment}>
           Increase
+        </button>
+
+        {/* added reset button */}
+        <button onClick={this.reset} style={{ marginLeft: "10px" }}>
+          Reset
         </button>
       </div>
     );
